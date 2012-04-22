@@ -1,0 +1,48 @@
+#!/bin/bash
+#"----------------------------------------"
+#" vim addon for highlight OpenFOAM cases "
+#" Language:     OpenFOAM Case Files      "
+#" Maintainer:   Tobias Holzmann          "
+#" Last Change:  April 22, 2012           "
+#" Version:      Beta 1.2b                "
+#" File:         install                  "
+#"----------------------------------------"
+#
+# If the script is not working, put the files into the right folders
+# .vimrc             ---> $HOME
+# openfoamcolor*.vim ---> $HOME/.vim/colors/ 
+# openfoam.vim       ---> $HOME/.vim/syntax/
+# scripts.vim        ---> $HOME/.vim/
+#
+# Start file placing
+# Make folders
+
+cd ${0%/*} || exit 1  # run from this directory
+
+echo "
+\"----------------------------------------\"
+\" vim addon for highlight OpenFOAM cases \"
+\" Maintainer:   Tobias Holzmann          \"
+\" Last Change:  April 07, 2012           \"
+\" Version:      Beta 1.2b                \"
+\"----------------------------------------\"
+"
+mkdir -p $HOME/.vim
+mkdir -p $HOME/.vim/syntax
+mkdir -p $HOME/.vim/colors
+
+cp -i syntax/openfoam.vim $HOME/.vim/syntax/
+cp -i scripts.vim $HOME/.vim/
+cp -ir colors/ $HOME/.vim/
+
+# Move existed .vimrc to the .vim folder, make a backup and set a new vimrc with cat
+mv -b $HOME/.vimrc $HOME/.vim/vimrcOrigin
+cat $HOME/.vim/vimrcOrigin .vimrc > $HOME/.vimrc
+
+echo "
+vim extension for highlight OpenFOAM cases is ready to use
+Highlight set for "dark background" you can use the colorschemes in .vim/color/
+Modify the .vim/scripts.vim file and choose your colorscheme 
+For more informations open the readme file
+"
+
