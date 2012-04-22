@@ -2,7 +2,7 @@
 " vim addon for highlight OpenFOAM cases "
 " Language:     OpenFOAM Case Files      "
 " Maintainer:   Tobias Holzmann          "
-" Last Change:  April 07, 2012           "
+" Last Change:  April 22, 2012           "
 " Version:      Beta 1.2                 "
 " File:         syntax                   "
 "----------------------------------------"
