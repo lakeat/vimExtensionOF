@@ -1,6 +1,6 @@
 #!/bin/bash
 #"----------------------------------------"
-#" vim addon for highlight OpenFOAM cases "
+#" vim extension OpenFOAM cases           "
 #" Language:     OpenFOAM Case Files      "
 #" Maintainer:   Tobias Holzmann          "
 #" Last Change:  April 22, 2012           "
@@ -9,13 +9,11 @@
 #"----------------------------------------"
 #
 # If the script is not working, put the files into the right folders
-# .vimrc             ---> $HOME
 # openfoamcolor*.vim ---> $HOME/.vim/colors/ 
 # openfoam.vim       ---> $HOME/.vim/syntax/
 # scripts.vim        ---> $HOME/.vim/
 #
-# Start file placing
-# Make folders
+#
 
 cd ${0%/*} || exit 1  # run from this directory
 
@@ -23,26 +21,38 @@ echo "
 \"----------------------------------------\"
 \" vim addon for highlight OpenFOAM cases \"
 \" Maintainer:   Tobias Holzmann          \"
-\" Last Change:  April 07, 2012           \"
+\" Last Change:  April 23, 2012           \"
 \" Version:      Beta 1.2b                \"
 \"----------------------------------------\"
 "
-mkdir -p $HOME/.vim
-mkdir -p $HOME/.vim/syntax
-mkdir -p $HOME/.vim/colors
 
-cp -i syntax/openfoam.vim $HOME/.vim/syntax/
-cp -i scripts.vim $HOME/.vim/
-cp -ir colors/ $HOME/.vim/
+# Checking out the .vim directory and create if not exist
 
-# Move existed .vimrc to the .vim folder, make a backup and set a new vimrc with cat
-mv -b $HOME/.vimrc $HOME/.vim/vimrcOrigin
-cat $HOME/.vim/vimrcOrigin .vimrc > $HOME/.vimrc
+if [ ! -d $HOME/.vim ]; then
+	mkdir $HOME/.vim
+fi
+
+if [ ! -d $HOME/.vim/syntax ]; then
+	mkdir $HOME/.vim/syntax
+fi
+
+if [ ! -d $HOME/.vim/colors ]; then
+	mkdir $HOME/.vim/colors
+fi
+
+# Checking out the files for update
+
+cp -u syntax/openfoam.vim $HOME/.vim/syntax/
+cp -u scripts.vim $HOME/.vim/
+cp -u colors/* $HOME/.vim/colors/
+
 
 echo "
-vim extension for highlight OpenFOAM cases is ready to use
-Highlight set for "dark background" you can use the colorschemes in .vim/color/
-Modify the .vim/scripts.vim file and choose your colorscheme 
+vimExtensionOF is ready to use 
+cholorscheme is set for dark background
+you can use other colorschemes from .vim/colors/ or creating your own 
+
+For changing the colorschemes edit the scripts.vim file
 For more informations open the readme file
 "
 
