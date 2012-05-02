@@ -1,15 +1,20 @@
 "----------------------------------------"
-" vim addon for highlight OpenFOAM cases "
+" vim extension for OpenFOAM cases files "
 " Language:	OpenFOAM Case Files      "
 " Maintainer:	Tobias Holzmann          "
-" Last Change:  April 07, 2012           "
-" Version:	Beta 1.2b                "
+" Last Change:  May 03, 2012             "
+" Version:	Beta 1.3                 "
 " File:		syntax			 "
 "----------------------------------------"
 "
 "
-" Everyone can add and change the file. If you add new lines for a new application or utilityi
-" supported with openfoam you can send me the lines and I'll add it to the new versions. 
+" Everyone can add and change the file. If you add new lines for a new application or utility
+" supported with openfoam you can send me the lines and I'll add it into the code.
+"
+" CHANGING and MODIFYING
+" ----------------------
+" If you wanna change some rules just do it by searching the keyword and remove it or add it to a new
+" or other group. Just look at some lines - its very simple! 
 "
 " Enjoy and be ready for FOAMING
 "
@@ -51,12 +56,12 @@ syntax 	region	ofCommentBlock start=/\/\*/  end=/\*\//
 highlight link	ofCommentLine  Comment
 highlight link 	ofCommentBlock Comment
 
-" OpenFOAM Special Varables $var
-syntax  match	ofSpecialVariables "\$[a-zA-Z_]\+[0-9]*"
+" OpenFOAM Special Variable $internalField
+syntax  keyword	ofSpecialVariables $internalField
 highlight link	ofSpecialVariables Statement
 
 " OpenFOAM variables
-syntax 	keyword	ofVariables nu nuInf nu0 n m sigma U p p_rgh k epsilon alpha1 omega nut mut mu nuTilda R rho psi gamma phi p0 T muEff h phiU alphaEff DkEff DepsilonEff DomegaEff DREff rhoFinal pFinal p_rghFinal Final K TFinal sigmaS emissivity Cp Hf kappa n0 Tref C0 K0 Pr
+syntax 	keyword	ofVariables nu nuInf nu0 n m sigma U p p_rgh k epsilon alpha1 omega nut mut mu nuTilda R rho psi gamma phi p0 T muEff h phiU alphaEff DkEff DepsilonEff DomegaEff DREff rhoFinal pFinal p_rghFinal Final K TFinal sigmaS emissivity Cp Hf kappa n0 Tref C0 K0 Pr DT 
 highlight link  ofVariables Special                                                                                 
 
 " OpenFOAM included files
