@@ -179,12 +179,12 @@ highlight link	ofDict0BoundaryTypeCompressible Boolean
 
 	" Boundary Variables
 
-syn	keyword ofDict0Value uniform intensity 
+syn	keyword ofDict0Value uniform  
 highlight link	ofDict0Value Type
 
 	" Boundary Init Values
 
-syn	keyword ofDict0Variables value inletValue outletValue mixingLength centreOfMass momentOfInertia mass velocity orientation acceleration angularMomentum torque gravity rhoInf report relaxationFactor sixDoFRigidBodyMotionRestraint anchor refAttachmentPt stiffness damping restLength maxIterations fixedOrientationCoeffs refPoint direction sixDoFRigidBodyMotionConstraint dimensions internalField KName neighbourFieldName 
+syn	keyword ofDict0Variables value inletValue outletValue mixingLength centreOfMass momentOfInertia mass velocity orientation acceleration angularMomentum torque gravity rhoInf report relaxationFactor sixDoFRigidBodyMotionRestraint anchor refAttachmentPt stiffness damping restLength maxIterations fixedOrientationCoeffs refPoint direction sixDoFRigidBodyMotionConstraint dimensions internalField KName neighbourFieldName intensity
 highlight link  ofDict0Variables Constant
 
 	" Boundary Groups
