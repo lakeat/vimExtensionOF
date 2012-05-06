@@ -57,7 +57,7 @@ highlight link	ofCommentLine  Comment
 highlight link 	ofCommentBlock Comment
 
 " OpenFOAM Special Variable $internalField
-syntax  keyword	ofSpecialVariables $internalField
+syntax  match	ofSpecialVariables "$internalField"
 highlight link	ofSpecialVariables Statement
 
 " OpenFOAM variables
@@ -184,7 +184,7 @@ highlight link	ofDict0Value Type
 
 	" Boundary Init Values
 
-syn	keyword ofDict0Variables value inletValue outletValue mixingLength centreOfMass momentOfInertia mass velocity orientation acceleration angularMomentum torque gravity rhoInf report relaxationFactor sixDoFRigidBodyMotionRestraint anchor refAttachmentPt stiffness damping restLength maxIterations fixedOrientationCoeffs refPoint direction sixDoFRigidBodyMotionConstraint dimensions internalField KName neighbourFieldName intensity
+syn	keyword ofDict0Variables value inletValue outletValue mixingLength centreOfMass momentOfInertia mass velocity orientation acceleration angularMomentum torque gravity rhoInf report relaxationFactor sixDoFRigidBodyMotionRestraint anchor refAttachmentPt stiffness damping restLength maxIterations fixedOrientationCoeffs refPoint direction sixDoFRigidBodyMotionConstraint dimensions KName neighbourFieldName intensity
 highlight link  ofDict0Variables Constant
 
 	" Boundary Groups
