@@ -61,7 +61,7 @@ syntax  match	ofSpecialVariables "$internalField"
 highlight link	ofSpecialVariables Statement
 
 " OpenFOAM variables
-syntax 	keyword	ofVariables nu nuInf nu0 n m sigma U p p_rgh k epsilon alpha1 omega nut mut mu nuTilda R rho psi gamma phi p0 T muEff h phiU alphaEff DkEff DepsilonEff DomegaEff DREff rhoFinal pFinal p_rghFinal Final K TFinal sigmaS emissivity Cp Hf kappa n0 Tref C0 K0 Pr DT 
+syntax 	keyword	ofVariables nu nuInf nu0 n m sigma U p p_rgh k epsilon alpha1 omega nut mut mu nuTilda R rho psi gamma phi p0 T muEff h phiU alphaEff DkEff DepsilonEff DomegaEff DREff rhoFinal pFinal p_rghFinal Final K TFinal sigmaS emissivity Cp Hf kappa n0 Tref C0 K0 Pr DT phid 
 highlight link  ofVariables Special                                                                                 
 
 " OpenFOAM included files
@@ -74,13 +74,13 @@ highlight link	ofIncludedFiles Statement
 
         " fvSolution
 
-syntax  keyword	ofFvSolutionsConst solver preconditioner tolerance relTol maxIter smoother cacheAgglomeration nCellsInCoarsestLevel agglomerator mergeLevels smoother cacheAgglomeration nCellsInCoarsestLevel agglomerator mergeLevels momentumPredictor nCorrectors nNonOrthogonalCorrectors nAlphaCorr nAlphaSubCycles cAlpha pRefPoint pRefValue nPreSweeps nPostSweeps nSweeps
+syntax  keyword	ofFvSolutionsConst solver preconditioner tolerance relTol maxIter smoother cacheAgglomeration nCellsInCoarsestLevel agglomerator mergeLevels smoother cacheAgglomeration nCellsInCoarsestLevel agglomerator mergeLevels momentumPredictor nCorrectors nNonOrthogonalCorrectors nAlphaCorr nAlphaSubCycles cAlpha pRefPoint pRefValue nPreSweeps nPostSweeps nSweeps rhoMin rhoMax pMin pMax transonic nFinestSweeps
 highlight link  ofFVSolutionsConst Constant
 
 syntax 	keyword	ofFvSolutionsAttribut PCG DIC GAMG GaussSeidel faceAreaPair DILU PBiCG smoothSolver
 highlight link 	ofFvSolutionsAttribut Type 
 
-syntax	keyword	ofFvSolutionGroups solvers SIMPLE PISO PIMPLE potentialFlow relaxationFactors cache residualControl
+syntax	keyword	ofFvSolutionGroups solvers SIMPLE PISO PIMPLE potentialFlow relaxationFactors cache residualControl convergence equations
 highlight link	ofFvSolutionGroups Statement
  
         " fvSchemes
@@ -93,7 +93,7 @@ highlight link	ofFvSchemesGroup2 Statement
 syntax  keyword ofFvSchemesConst div default grad laplacian interpolate snGrad dev dev2
 highlight link  ofFvSchemesConst Constant
 
-syntax keyword ofFvSchemesAttribut CoEuler CrankNicholson Euler SLTS backward localEuler steadyState Gauss cellLimited cellMDLimited extendedLeastSquares faceLimited faceMDLimited fourth leastSquares Gamma GammaV LUST MUSCL MUSCLV Minmod MinmodV OSPRE OSPREV Phi QUICK QUICKV SFCD SFCDV SuperBee SuperBeeV UMIST UMISTV biLinearFit blended clippedLinear cubic cubicUpwindFit downwind filteredLinear filteredLinear2 filteredLinear2V filteredLinear3 filteredLinear3V fixedBlended limitWith limitedCubic limitedCubicV limitedLinear limitedLinearV limiterBlended linear linearFit linearPureUpwindFit linearUpwind linearUpwindV localBlended localMax localMin midPoint outletStabilised pointLinear quadraticFit quadraticLinearFit quadraticLinearUpwindFit quadraticUpwindFit reverseLinear skewCorrected upwind vanAlbada vanAlbadaV vanLeer vanLeerV weighted corrected limited orthogonal uncorrected
+syntax keyword ofFvSchemesAttribut CoEuler CrankNicholson Euler SLTS backward localEuler steadyState Gauss cellLimited cellMDLimited extendedLeastSquares faceLimited faceMDLimited fourth leastSquares Gamma GammaV LUST MUSCL MUSCLV Minmod MinmodV OSPRE OSPREV Phi QUICK QUICKV SFCD SFCDV SuperBee SuperBeeV UMIST UMISTV biLinearFit blended clippedLinear cubic cubicUpwindFit downwind filteredLinear filteredLinear2 filteredLinear2V filteredLinear3 filteredLinear3V fixedBlended limitWith limitedCubic limitedCubicV limitedLinear limitedLinearV limiterBlended linear linearFit linearPureUpwindFit linearUpwind linearUpwindV localBlended localMax localMin midPoint outletStabilised pointLinear quadraticFit quadraticLinearFit quadraticLinearUpwindFit quadraticUpwindFit reverseLinear skewCorrected upwind vanAlbada vanAlbadaV vanLeer vanLeerV weighted corrected limited orthogonal uncorrected limitedLimitedLinear 
 highlight link 	ofFvSchemesAttribut Type
 
 
@@ -123,7 +123,7 @@ highlight link	ofSetFieldsDictionaryDictGroup Statement
 
  	" snappyHexMeshDict
 
-syntax 	keyword	ofSnappyHexMeshType file inside outside distance closedTriSurfaceMesh distributedTriSurfaceMesh searchableBox searchableCylinder  searchablePlane searchablePlate searchableSphere  searchableSurfaceCollection searchableSurfaceWithGaps  triSurfaceMesh
+syntax 	keyword	ofSnappyHexMeshType file inside outside distance closedTriSurfaceMesh distributedTriSurfaceMesh searchableBox searchableCylinder  searchablePlane searchablePlate searchableSphere  searchableSurfaceCollection searchableSurfaceWithGaps  triSurfaceMesh patchInfo
 
 highlight link 	ofSnappyHexMeshType Type 
 
