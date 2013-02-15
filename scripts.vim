@@ -15,7 +15,7 @@ let cnum = 1
 while 1
    if (getline(cnum) =~ 'FoamFile') 		" Check the first 20 lines for FoamFile
       setfiletype openfoam
-      colorscheme openfoamcolorBlackWhite	" Set up your colorscheme
+      colorscheme openfoamcolorBlackWhite2	" Set up your colorscheme
       break
    elseif (cnum == 20)
       break
